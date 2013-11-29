@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E55D66E-A685-442E-B702-D9B7167D1121}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DQBase.Web</RootNamespace>
+    <AssemblyName>DQBase.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SilverlightApplicationList>
+    </SilverlightApplicationList>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxEditors.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Web.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics4.Web.v11.1, Version=11.1.20111.1006, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salir.aspx.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Salir.aspx.designer.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ui\AsignarPerfilMenu.aspx.cs">
+      <DependentUpon>AsignarPerfilMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\AsignarPerfilMenu.aspx.designer.cs">
+      <DependentUpon>AsignarPerfilMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\AsignarPerfilUsuario.aspx.cs">
+      <DependentUpon>AsignarPerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\AsignarPerfilUsuario.aspx.designer.cs">
+      <DependentUpon>AsignarPerfilUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\CambiarClave.aspx.cs">
+      <DependentUpon>CambiarClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\CambiarClave.aspx.designer.cs">
+      <DependentUpon>CambiarClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\CearPerfil.aspx.cs">
+      <DependentUpon>CearPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\CearPerfil.aspx.designer.cs">
+      <DependentUpon>CearPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\CrearUsuario.aspx.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\CrearUsuario.aspx.designer.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarCiudad.aspx.cs">
+      <DependentUpon>EditarCiudad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarCiudad.aspx.designer.cs">
+      <DependentUpon>EditarCiudad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarCorporacion.aspx.cs">
+      <DependentUpon>EditarCorporacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarCorporacion.aspx.designer.cs">
+      <DependentUpon>EditarCorporacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarLaboratorio.aspx.cs">
+      <DependentUpon>EditarLaboratorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarLaboratorio.aspx.designer.cs">
+      <DependentUpon>EditarLaboratorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\CrearMovimientoProducto.aspx.cs">
+      <DependentUpon>CrearMovimientoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\CrearMovimientoProducto.aspx.designer.cs">
+      <DependentUpon>CrearMovimientoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarMenu.aspx.cs">
+      <DependentUpon>EditarMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarMenu.aspx.designer.cs">
+      <DependentUpon>EditarMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarMovimientoProducto.aspx.cs">
+      <DependentUpon>EditarMovimientoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarMovimientoProducto.aspx.designer.cs">
+      <DependentUpon>EditarMovimientoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarPais.aspx.cs">
+      <DependentUpon>EditarPais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarPais.aspx.designer.cs">
+      <DependentUpon>EditarPais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarProducto.aspx.cs">
+      <DependentUpon>EditarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarProducto.aspx.designer.cs">
+      <DependentUpon>EditarProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarRegion.aspx.cs">
+      <DependentUpon>EditarRegion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarRegion.aspx.designer.cs">
+      <DependentUpon>EditarRegion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarSubProductos.aspx.cs">
+      <DependentUpon>EditarSubProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarSubProductos.aspx.designer.cs">
+      <DependentUpon>EditarSubProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\Entrada.aspx.cs">
+      <DependentUpon>Entrada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\Entrada.aspx.designer.cs">
+      <DependentUpon>Entrada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\Interfase.aspx.cs">
+      <DependentUpon>Interfase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\Interfase.aspx.designer.cs">
+      <DependentUpon>Interfase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MantenimientoCorpLab.aspx.cs">
+      <DependentUpon>MantenimientoCorpLab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\MantenimientoCorpLab.aspx.designer.cs">
+      <DependentUpon>MantenimientoCorpLab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MantenimientoMenus.aspx.cs">
+      <DependentUpon>MantenimientoMenus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\MantenimientoMenus.aspx.designer.cs">
+      <DependentUpon>MantenimientoMenus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MantenimientoPerfiles.aspx.cs">
+      <DependentUpon>MantenimientoPerfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\MantenimientoPerfiles.aspx.designer.cs">
+      <DependentUpon>MantenimientoPerfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MantenimientoProducto.aspx.cs">
+      <DependentUpon>MantenimientoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\MantenimientoProducto.aspx.designer.cs">
+      <DependentUpon>MantenimientoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MantenimientoUbicacion.aspx.cs">
+      <DependentUpon>MantenimientoUbicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\MantenimientoUbicacion.aspx.designer.cs">
+      <DependentUpon>MantenimientoUbicacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MantenimientoUsuarios.aspx.cs">
+      <DependentUpon>MantenimientoUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\MantenimientoUsuarios.aspx.designer.cs">
+      <DependentUpon>MantenimientoUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MovimientoProducto.aspx.cs">
+      <DependentUpon>MovimientoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\MovimientoProducto.aspx.designer.cs">
+      <DependentUpon>MovimientoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\ReportVentas.aspx.cs">
+      <DependentUpon>ReportVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\ReportVentas.aspx.designer.cs">
+      <DependentUpon>ReportVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\ReportVentasGrupoTer.aspx.cs">
+      <DependentUpon>ReportVentasGrupoTer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\ReportVentasGrupoTer.aspx.designer.cs">
+      <DependentUpon>ReportVentasGrupoTer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\ReportVentasProducLab.aspx.cs">
+      <DependentUpon>ReportVentasProducLab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\ReportVentasProducLab.aspx.designer.cs">
+      <DependentUpon>ReportVentasProducLab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\VerificarVentas.aspx.cs">
+      <DependentUpon>VerificarVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\VerificarVentas.aspx.designer.cs">
+      <DependentUpon>VerificarVentas.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\estilos.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\barra central.jpg" />
+    <Content Include="images\barra inferior.jpg" />
+    <Content Include="images\barra superior.jpg" />
+    <Content Include="images\boton cargar.png" />
+    <Content Include="images\boton examinar.png" />
+    <Content Include="images\boton guardar.png" />
+    <Content Include="images\boton inicio.png" />
+    <Content Include="images\boton limpiar.png" />
+    <Content Include="images\data_quest.jpg" />
+    <Content Include="images\data_quest_pequenia.jpg" />
+    <Content Include="images\DQbase encabezado.jpg" />
+    <Content Include="images\DQbase inicio sesion.jpg" />
+    <Content Include="images\DQbase.jpg" />
+    <Content Include="images\fondo dqbase.jpg" />
+    <Content Include="images\grafest1.png" />
+    <Content Include="images\grafest2.png" />
+    <Content Include="images\loader.gif" />
+    <Content Include="images\triang 1.png" />
+    <Content Include="images\triang 2.png" />
+    <Content Include="images\triang 3.png" />
+    <Content Include="images\triang 4.png" />
+    <Content Include="Salir.aspx" />
+    <Content Include="ui\AsignarPerfilMenu.aspx" />
+    <Content Include="ui\AsignarPerfilUsuario.aspx" />
+    <Content Include="ui\CambiarClave.aspx" />
+    <Content Include="ui\CearPerfil.aspx" />
+    <Content Include="ui\CrearUsuario.aspx" />
+    <Content Include="ui\EditarCiudad.aspx" />
+    <Content Include="ui\EditarCorporacion.aspx" />
+    <Content Include="ui\EditarLaboratorio.aspx" />
+    <Content Include="ui\CrearMovimientoProducto.aspx" />
+    <Content Include="ui\EditarMenu.aspx" />
+    <Content Include="ui\EditarMovimientoProducto.aspx" />
+    <Content Include="ui\EditarPais.aspx" />
+    <Content Include="ui\EditarProducto.aspx" />
+    <Content Include="ui\EditarRegion.aspx" />
+    <Content Include="ui\EditarSubProductos.aspx" />
+    <Content Include="ui\EditarUsuario.aspx" />
+    <Content Include="ui\Entrada.aspx" />
+    <Content Include="ui\Interfase.aspx" />
+    <Content Include="ui\MantenimientoCorpLab.aspx" />
+    <Content Include="ui\MantenimientoMenus.aspx" />
+    <Content Include="ui\MantenimientoPerfiles.aspx" />
+    <Content Include="ui\MantenimientoProducto.aspx" />
+    <Content Include="ui\MantenimientoUbicacion.aspx" />
+    <Content Include="ui\MantenimientoUsuarios.aspx" />
+    <Content Include="ui\MovimientoProducto.aspx" />
+    <Content Include="ui\ReportVentas.aspx" />
+    <Content Include="ui\ReportVentasGrupoTer.aspx" />
+    <Content Include="ui\ReportVentasProducLab.aspx" />
+    <Content Include="ui\VerificarVentas.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DQBase.Business\DQBase.Business.csproj">
+      <Project>{59CDB40F-B531-4416-A1F0-534F6461EC86}</Project>
+      <Name>DQBase.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DQBase.Entities\DQBase.Entities.csproj">
+      <Project>{84882C11-AC00-4BC8-A5F2-9FC9ACAC5E7A}</Project>
+      <Name>DQBase.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ui\ExcelFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6966</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/DQBaseWeb</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

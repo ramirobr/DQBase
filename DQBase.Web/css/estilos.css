@@ -1,0 +1,24 @@
+﻿body
+{
+    background-color: #C0C0C0;
+    background-repeat: repeat;
+}
+.LabelNormal
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000000;
+}
+.LabelTitulo
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+}
+.LabelError
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: red;
+}

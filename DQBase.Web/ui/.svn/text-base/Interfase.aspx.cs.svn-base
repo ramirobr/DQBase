@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DQBase.Entities;
+using DQBase.Business;
+
+namespace DQBase.Web.ui
+{
+    public partial class Interfase : System.Web.UI.Page
+    {
+        private List<LABORATORIO> _laboratorios;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                CargarCorporaciones();
+                CargarLaboratorios();
+            }
+        }
+
+        private void CargarCorporaciones()
+        {
+            ICorporaciones negocio = new BusinessLogic();
+            List<CORPORACION> corporaciones = negocio.ObtenerCorporaciones();
+            ddlCorporaciones.DataSource = corporaciones;
+            ddlCorporaciones.DataTextField = "NOMBRECORPORACION";
+            ddlCorporaciones.DataBind();
+        }
+
+        private void CargarLaboratorios()
+        {
+            ILaboratorios negocio = new BusinessLogic();
+            _laboratorios = negocio.ObtenerLaboratorio();
+            Session.Add("LaboratoriosTemp", _laboratorios);
+            ddlLaboratorios.DataSource = _laboratorios;
+            ddlLaboratorios.DataTextField = "NOMBRELABORATORIO";
+            ddlLaboratorios.DataBind();
+        }
+
+        protected void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            ILaboratorios negocio = new BusinessLogic();
+            List<LABORATORIO> laboratorio = negocio.ObtenerLaboratorio(ddlCorporaciones.Text);
+            _laboratorios = (List<LABORATORIO>)Session["LaboratoriosTemp"];
+            laboratorio.AddRange(_laboratorios);
+            laboratorio=laboratorio.OrderBy(x => x.NOMBRELABORATORIO).ToList();
+            ddlLaboratorios.DataSource = laboratorio;
+            ddlLaboratorios.DataTextField = "NOMBRELABORATORIO";
+            ddlLaboratorios.DataBind();
+        }
+    }
+}

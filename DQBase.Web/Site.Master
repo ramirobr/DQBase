@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DQBase.Web.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>DQBase Web</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 282px;
+        }
+    </style>
+    <link href="css/estilos.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+    <table class="style1" align="center">
+        <tr>
+            <td>
+                <asp:Image ID="banner" runat="server" Height="110px" 
+                    ImageUrl="~/images/DQbase encabezado.jpg" Width="100%" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="style1">
+                    <tr>
+                        <td class="style2" align="left" valign="top">
+                         
+                            <asp:TreeView ID="TreeViewMenu" runat="server" ImageSet="Arrows" 
+                                ShowLines="True" ExpandDepth="0" NodeWrap="True">
+                                <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                                <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" 
+                                    HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                                <ParentNodeStyle Font-Bold="False" />
+                                <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" 
+                                    HorizontalPadding="0px" VerticalPadding="0px" />
+                            </asp:TreeView>
+                         
+                        </td>
+                        <td align="left" valign="top">
+                        
+                            <asp:ContentPlaceHolder ID="ContenedorPrincipal" runat="server">
+                            </asp:ContentPlaceHolder>
+                        
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    </form>
+    <p>
+        &nbsp;</p>
+</body>
+</html>

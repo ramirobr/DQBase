@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DQBase.Entities
+{
+    public enum Catalogos
+    {
+        APLICACIONPRODUCTO,
+        FORMAPRODUCTO,
+        TIPOMERCADO,
+        TIPOPRODUCTO,
+        MESES
+    }
+    
+}

@@ -1,0 +1,1500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DQBaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DQBaseModelStoreContainer">
+          <EntitySet Name="CATALOGO" EntityType="DQBaseModel.Store.CATALOGO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ciclo" EntityType="DQBaseModel.Store.Ciclo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CONSULTA" EntityType="DQBaseModel.Store.CONSULTA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CORPORACION" EntityType="DQBaseModel.Store.CORPORACION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GRUPOTERAPEUTICO" EntityType="DQBaseModel.Store.GRUPOTERAPEUTICO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HISTORIALUSUARIO" EntityType="DQBaseModel.Store.HISTORIALUSUARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HISTORICOPRECIO" EntityType="DQBaseModel.Store.HISTORICOPRECIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LABORATORIO" EntityType="DQBaseModel.Store.LABORATORIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MENU" EntityType="DQBaseModel.Store.MENU" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MOVIMIENTOSUBPRODUCTO" EntityType="DQBaseModel.Store.MOVIMIENTOSUBPRODUCTO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PRODUCTO" EntityType="DQBaseModel.Store.PRODUCTO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ROL" EntityType="DQBaseModel.Store.ROL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ROLMENU" EntityType="DQBaseModel.Store.ROLMENU" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ROLUSUARIO" EntityType="DQBaseModel.Store.ROLUSUARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SUBPRODUCTO" EntityType="DQBaseModel.Store.SUBPRODUCTO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UBICACIONGEOGRAFICA" EntityType="DQBaseModel.Store.UBICACIONGEOGRAFICA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USUARIO" EntityType="DQBaseModel.Store.USUARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VENTA" EntityType="DQBaseModel.Store.VENTA" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CONSULTA_USUARIOCO_USUARIO" Association="DQBaseModel.Store.FK_CONSULTA_USUARIOCO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="CONSULTA" EntitySet="CONSULTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIA_USUARIOHI_USUARIO" Association="DQBaseModel.Store.FK_HISTORIA_USUARIOHI_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="HISTORIALUSUARIO" EntitySet="HISTORIALUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIC_MOVIMIENT_MOVIMIEN" Association="DQBaseModel.Store.FK_HISTORIC_MOVIMIENT_MOVIMIEN">
+            <End Role="MOVIMIENTOSUBPRODUCTO" EntitySet="MOVIMIENTOSUBPRODUCTO" />
+            <End Role="HISTORICOPRECIO" EntitySet="HISTORICOPRECIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LABORATO_CORPORACI_CORPORAC" Association="DQBaseModel.Store.FK_LABORATO_CORPORACI_CORPORAC">
+            <End Role="CORPORACION" EntitySet="CORPORACION" />
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LABORATO_UBICACION_UBICACIO" Association="DQBaseModel.Store.FK_LABORATO_UBICACION_UBICACIO">
+            <End Role="UBICACIONGEOGRAFICA" EntitySet="UBICACIONGEOGRAFICA" />
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVIMIEN_LABORATOR_LABORATO" Association="DQBaseModel.Store.FK_MOVIMIEN_LABORATOR_LABORATO">
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+            <End Role="MOVIMIENTOSUBPRODUCTO" EntitySet="MOVIMIENTOSUBPRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVIMIEN_SUBPRODUC_SUBPRODU" Association="DQBaseModel.Store.FK_MOVIMIEN_SUBPRODUC_SUBPRODU">
+            <End Role="SUBPRODUCTO" EntitySet="SUBPRODUCTO" />
+            <End Role="MOVIMIENTOSUBPRODUCTO" EntitySet="MOVIMIENTOSUBPRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLMENU_MENUROL_MENU" Association="DQBaseModel.Store.FK_ROLMENU_MENUROL_MENU">
+            <End Role="MENU" EntitySet="MENU" />
+            <End Role="ROLMENU" EntitySet="ROLMENU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLMENU_ROLMENU_ROL" Association="DQBaseModel.Store.FK_ROLMENU_ROLMENU_ROL">
+            <End Role="ROL" EntitySet="ROL" />
+            <End Role="ROLMENU" EntitySet="ROLMENU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLUSUAR_ROLUSUARI_ROL" Association="DQBaseModel.Store.FK_ROLUSUAR_ROLUSUARI_ROL">
+            <End Role="ROL" EntitySet="ROL" />
+            <End Role="ROLUSUARIO" EntitySet="ROLUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLUSUAR_USUARIORO_USUARIO" Association="DQBaseModel.Store.FK_ROLUSUAR_USUARIORO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="ROLUSUARIO" EntitySet="ROLUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBPRODU_GRUPOSUBP_GRUPOTER" Association="DQBaseModel.Store.FK_SUBPRODU_GRUPOSUBP_GRUPOTER">
+            <End Role="GRUPOTERAPEUTICO" EntitySet="GRUPOTERAPEUTICO" />
+            <End Role="SUBPRODUCTO" EntitySet="SUBPRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBPRODU_PRODUCTOS_PRODUCTO" Association="DQBaseModel.Store.FK_SUBPRODU_PRODUCTOS_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="SUBPRODUCTO" EntitySet="SUBPRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_LABORATOR_LABORATO" Association="DQBaseModel.Store.FK_USUARIO_LABORATOR_LABORATO">
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_LABORATOR_LABORATO" Association="DQBaseModel.Store.FK_VENTA_LABORATOR_LABORATO">
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_MOVIMIENT_MOVIMIEN" Association="DQBaseModel.Store.FK_VENTA_MOVIMIENT_MOVIMIEN">
+            <End Role="MOVIMIENTOSUBPRODUCTO" EntitySet="MOVIMIENTOSUBPRODUCTO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_UBICACION_UBICACIO" Association="DQBaseModel.Store.FK_VENTA_UBICACION_UBICACIO">
+            <End Role="UBICACIONGEOGRAFICA" EntitySet="UBICACIONGEOGRAFICA" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_USUARIOVE_USUARIO" Association="DQBaseModel.Store.FK_VENTA_USUARIOVE_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="Ubicacion_Corporacion" Association="DQBaseModel.Store.Ubicacion_Corporacion">
+            <End Role="UBICACIONGEOGRAFICA" EntitySet="UBICACIONGEOGRAFICA" />
+            <End Role="CORPORACION" EntitySet="CORPORACION" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CATALOGO">
+          <Key>
+            <PropertyRef Name="IDCATALAGO" />
+          </Key>
+          <Property Name="IDCATALAGO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DESCRIPCIONCATALOGO" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="TABLA" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ESBORRADOCATALOGO" Type="bit" Nullable="false" />
+          <Property Name="CODIGO" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Ciclo">
+          <Key>
+            <PropertyRef Name="IdCiclo" />
+          </Key>
+          <Property Name="IdCiclo" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaCiclo" Type="datetime" Nullable="false" />
+          <Property Name="EsPublicado" Type="bit" Nullable="false" />
+          <Property Name="EsBorrado" Type="bit" />
+          <Property Name="FechaPublicacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CONSULTA">
+          <Key>
+            <PropertyRef Name="IDCONSULTA" />
+          </Key>
+          <Property Name="IDCONSULTA" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDTABLA" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NOMBRECONSULTA" Type="char" Nullable="false" MaxLength="30" />
+          <Property Name="CONSULTA" Type="varchar" Nullable="false" />
+          <Property Name="ESBORRADOCONSULTA" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CORPORACION">
+          <Key>
+            <PropertyRef Name="IDCORPORACION" />
+          </Key>
+          <Property Name="IDCORPORACION" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NOMBRECORPORACION" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ABREVIATURACORPORACION" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="ESBORRADOCORPORACION" Type="bit" Nullable="false" />
+          <Property Name="IdUbicacion" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="GRUPOTERAPEUTICO">
+          <Key>
+            <PropertyRef Name="IDGRUPO" />
+          </Key>
+          <Property Name="IDGRUPO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDSUBGRUPO" Type="uniqueidentifier" />
+          <Property Name="ABREVIATURAGRUPOTER" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="NOMBREGRUPOTER" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="DESCRIPCIONGRUPOTER" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="ESBORRADOGRUPOTER" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HISTORIALUSUARIO">
+          <Key>
+            <PropertyRef Name="IDHISTORIAL" />
+          </Key>
+          <Property Name="IDHISTORIAL" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FECHAHISTORIAL" Type="datetime" Nullable="false" />
+          <Property Name="ESTADOUSUARIO" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="SERVICIOUSUARIO" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="COMENTARIO" Type="varchar" MaxLength="100" />
+          <Property Name="ESBORRADOHISTORIALUSU" Type="bit" />
+        </EntityType>
+        <EntityType Name="HISTORICOPRECIO">
+          <Key>
+            <PropertyRef Name="IDHISTORICOPRECIO" />
+          </Key>
+          <Property Name="IDHISTORICOPRECIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CODIGOSUBPRODUCTO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PRECIO" Type="money" Nullable="false" />
+          <Property Name="FECHAHISTORICOPRECIO" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LABORATORIO">
+          <Key>
+            <PropertyRef Name="IDLABORATORIO" />
+          </Key>
+          <Property Name="IDLABORATORIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDUBICACION" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDCORPORACION" Type="uniqueidentifier" />
+          <Property Name="NOMBRELABORATORIO" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ABREVIATURALABORATORIO" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="30" />
+          <Property Name="DIRECCION2" Type="varchar" MaxLength="30" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="20" />
+          <Property Name="ORIGEN" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="OBSERVACION" Type="varchar" MaxLength="2000" />
+          <Property Name="ESBORRADOLABORATORIO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MENU">
+          <Key>
+            <PropertyRef Name="IDMENU" />
+          </Key>
+          <Property Name="IDMENU" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDMENUPADRE" Type="uniqueidentifier" />
+          <Property Name="NIVELMENU" Type="int" />
+          <Property Name="DESCRIPCIONMENU" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="RUTA" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="MOVIMIENTOSUBPRODUCTO">
+          <Key>
+            <PropertyRef Name="CODIGOSUBPRODUCTO" />
+          </Key>
+          <Property Name="CODIGOSUBPRODUCTO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDSUBPRODUCTO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDLABORATORIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CODIGOPRODUCTOLABORATORIO" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="ESNUEVO" Type="bit" Nullable="false" />
+          <Property Name="FECHALANZAMIENTO" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="IDPRODUCTO" />
+          </Key>
+          <Property Name="IDPRODUCTO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NOMBREPRODUCTO" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ESBORRADOPRODUCTO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROL">
+          <Key>
+            <PropertyRef Name="IDROL" />
+          </Key>
+          <Property Name="IDROL" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DESCRIPCIONROL" Type="varchar" Nullable="false" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="ROLMENU">
+          <Key>
+            <PropertyRef Name="IDROLMENU" />
+          </Key>
+          <Property Name="IDROLMENU" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDROL" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDMENU" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLUSUARIO">
+          <Key>
+            <PropertyRef Name="IDROLUSUARIO" />
+          </Key>
+          <Property Name="IDROLUSUARIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDROL" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUBPRODUCTO">
+          <Key>
+            <PropertyRef Name="IDSUBPRODUCTO" />
+          </Key>
+          <Property Name="IDSUBPRODUCTO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDGRUPO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDAPLICACION" Type="uniqueidentifier" />
+          <Property Name="IDFORMAPROD" Type="uniqueidentifier" />
+          <Property Name="IDTIPOMERCADO" Type="uniqueidentifier" />
+          <Property Name="IDTIPOPRODUCTO" Type="uniqueidentifier" />
+          <Property Name="PRESENTACION" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CONCENTRACION" Type="float" Nullable="false" />
+          <Property Name="UNIDAD" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="CANTIDAD" Type="smallint" Nullable="false" />
+          <Property Name="PRINCIPIOACTIVO" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="INDICACIONESDEUSO" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="ESBORRADOSUBPRODUCTO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UBICACIONGEOGRAFICA">
+          <Key>
+            <PropertyRef Name="IDUBICACION" />
+          </Key>
+          <Property Name="IDUBICACION" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NOMBREUBICACION" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="IDPADRE" Type="uniqueidentifier" />
+          <Property Name="CATEGORIAUBICACION" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ESBORRADOUBICACION" Type="bit" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="IDUSUARIO" />
+          </Key>
+          <Property Name="IDUSUARIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDLABORATORIO" Type="uniqueidentifier" />
+          <Property Name="NOMBRECOMPLETO" Type="varchar" Nullable="false" MaxLength="70" />
+          <Property Name="USUARIO" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CLAVE" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ESBORRADOUSUARIO" Type="bit" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="FechaCaducidad" Type="datetime" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="IDVENTA" />
+          </Key>
+          <Property Name="IDVENTA" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CODIGOSUBPRODUCTO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDUBICACION" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IDLABORATORIO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FECHA" Type="datetime" Nullable="false" />
+          <Property Name="CANTIDADVENTA" Type="int" Nullable="false" />
+          <Property Name="TOTALVENTA" Type="money" />
+          <Property Name="ESCORRECTO" Type="bit" Nullable="false" />
+          <Property Name="ESPUBLICO" Type="bit" Nullable="false" />
+          <Property Name="NOMBREINSTITUCION" Type="char" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_CONSULTA_USUARIOCO_USUARIO">
+          <End Role="USUARIO" Type="DQBaseModel.Store.USUARIO" Multiplicity="1" />
+          <End Role="CONSULTA" Type="DQBaseModel.Store.CONSULTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="CONSULTA">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIA_USUARIOHI_USUARIO">
+          <End Role="USUARIO" Type="DQBaseModel.Store.USUARIO" Multiplicity="1" />
+          <End Role="HISTORIALUSUARIO" Type="DQBaseModel.Store.HISTORIALUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="HISTORIALUSUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIC_MOVIMIENT_MOVIMIEN">
+          <End Role="MOVIMIENTOSUBPRODUCTO" Type="DQBaseModel.Store.MOVIMIENTOSUBPRODUCTO" Multiplicity="1" />
+          <End Role="HISTORICOPRECIO" Type="DQBaseModel.Store.HISTORICOPRECIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOVIMIENTOSUBPRODUCTO">
+              <PropertyRef Name="CODIGOSUBPRODUCTO" />
+            </Principal>
+            <Dependent Role="HISTORICOPRECIO">
+              <PropertyRef Name="CODIGOSUBPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LABORATO_CORPORACI_CORPORAC">
+          <End Role="CORPORACION" Type="DQBaseModel.Store.CORPORACION" Multiplicity="0..1" />
+          <End Role="LABORATORIO" Type="DQBaseModel.Store.LABORATORIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CORPORACION">
+              <PropertyRef Name="IDCORPORACION" />
+            </Principal>
+            <Dependent Role="LABORATORIO">
+              <PropertyRef Name="IDCORPORACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LABORATO_UBICACION_UBICACIO">
+          <End Role="UBICACIONGEOGRAFICA" Type="DQBaseModel.Store.UBICACIONGEOGRAFICA" Multiplicity="1" />
+          <End Role="LABORATORIO" Type="DQBaseModel.Store.LABORATORIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UBICACIONGEOGRAFICA">
+              <PropertyRef Name="IDUBICACION" />
+            </Principal>
+            <Dependent Role="LABORATORIO">
+              <PropertyRef Name="IDUBICACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVIMIEN_LABORATOR_LABORATO">
+          <End Role="LABORATORIO" Type="DQBaseModel.Store.LABORATORIO" Multiplicity="1" />
+          <End Role="MOVIMIENTOSUBPRODUCTO" Type="DQBaseModel.Store.MOVIMIENTOSUBPRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LABORATORIO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Principal>
+            <Dependent Role="MOVIMIENTOSUBPRODUCTO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVIMIEN_SUBPRODUC_SUBPRODU">
+          <End Role="SUBPRODUCTO" Type="DQBaseModel.Store.SUBPRODUCTO" Multiplicity="1" />
+          <End Role="MOVIMIENTOSUBPRODUCTO" Type="DQBaseModel.Store.MOVIMIENTOSUBPRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBPRODUCTO">
+              <PropertyRef Name="IDSUBPRODUCTO" />
+            </Principal>
+            <Dependent Role="MOVIMIENTOSUBPRODUCTO">
+              <PropertyRef Name="IDSUBPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLMENU_MENUROL_MENU">
+          <End Role="MENU" Type="DQBaseModel.Store.MENU" Multiplicity="1" />
+          <End Role="ROLMENU" Type="DQBaseModel.Store.ROLMENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MENU">
+              <PropertyRef Name="IDMENU" />
+            </Principal>
+            <Dependent Role="ROLMENU">
+              <PropertyRef Name="IDMENU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLMENU_ROLMENU_ROL">
+          <End Role="ROL" Type="DQBaseModel.Store.ROL" Multiplicity="1" />
+          <End Role="ROLMENU" Type="DQBaseModel.Store.ROLMENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="IDROL" />
+            </Principal>
+            <Dependent Role="ROLMENU">
+              <PropertyRef Name="IDROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLUSUAR_ROLUSUARI_ROL">
+          <End Role="ROL" Type="DQBaseModel.Store.ROL" Multiplicity="1" />
+          <End Role="ROLUSUARIO" Type="DQBaseModel.Store.ROLUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="IDROL" />
+            </Principal>
+            <Dependent Role="ROLUSUARIO">
+              <PropertyRef Name="IDROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLUSUAR_USUARIORO_USUARIO">
+          <End Role="USUARIO" Type="DQBaseModel.Store.USUARIO" Multiplicity="1" />
+          <End Role="ROLUSUARIO" Type="DQBaseModel.Store.ROLUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="ROLUSUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBPRODU_GRUPOSUBP_GRUPOTER">
+          <End Role="GRUPOTERAPEUTICO" Type="DQBaseModel.Store.GRUPOTERAPEUTICO" Multiplicity="1" />
+          <End Role="SUBPRODUCTO" Type="DQBaseModel.Store.SUBPRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRUPOTERAPEUTICO">
+              <PropertyRef Name="IDGRUPO" />
+            </Principal>
+            <Dependent Role="SUBPRODUCTO">
+              <PropertyRef Name="IDGRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBPRODU_PRODUCTOS_PRODUCTO">
+          <End Role="PRODUCTO" Type="DQBaseModel.Store.PRODUCTO" Multiplicity="1" />
+          <End Role="SUBPRODUCTO" Type="DQBaseModel.Store.SUBPRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="SUBPRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_LABORATOR_LABORATO">
+          <End Role="LABORATORIO" Type="DQBaseModel.Store.LABORATORIO" Multiplicity="0..1" />
+          <End Role="USUARIO" Type="DQBaseModel.Store.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LABORATORIO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_LABORATOR_LABORATO">
+          <End Role="LABORATORIO" Type="DQBaseModel.Store.LABORATORIO" Multiplicity="1" />
+          <End Role="VENTA" Type="DQBaseModel.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LABORATORIO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_MOVIMIENT_MOVIMIEN">
+          <End Role="MOVIMIENTOSUBPRODUCTO" Type="DQBaseModel.Store.MOVIMIENTOSUBPRODUCTO" Multiplicity="1" />
+          <End Role="VENTA" Type="DQBaseModel.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOVIMIENTOSUBPRODUCTO">
+              <PropertyRef Name="CODIGOSUBPRODUCTO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="CODIGOSUBPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_UBICACION_UBICACIO">
+          <End Role="UBICACIONGEOGRAFICA" Type="DQBaseModel.Store.UBICACIONGEOGRAFICA" Multiplicity="1" />
+          <End Role="VENTA" Type="DQBaseModel.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UBICACIONGEOGRAFICA">
+              <PropertyRef Name="IDUBICACION" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IDUBICACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_USUARIOVE_USUARIO">
+          <End Role="USUARIO" Type="DQBaseModel.Store.USUARIO" Multiplicity="1" />
+          <End Role="VENTA" Type="DQBaseModel.Store.VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ubicacion_Corporacion">
+          <End Role="UBICACIONGEOGRAFICA" Type="DQBaseModel.Store.UBICACIONGEOGRAFICA" Multiplicity="0..1" />
+          <End Role="CORPORACION" Type="DQBaseModel.Store.CORPORACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UBICACIONGEOGRAFICA">
+              <PropertyRef Name="IDUBICACION" />
+            </Principal>
+            <Dependent Role="CORPORACION">
+              <PropertyRef Name="IdUbicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Get_CicloVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fechaInicioActual" Type="datetime" Mode="In" />
+          <Parameter Name="fechaFinActual" Type="datetime" Mode="In" />
+          <Parameter Name="fechaInicioAnterior" Type="datetime" Mode="In" />
+          <Parameter Name="fechaFinAnterior" Type="datetime" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DQBaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DQBaseContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CATALOGO" EntityType="DQBaseModel.CATALOGO" />
+          <EntitySet Name="CONSULTA" EntityType="DQBaseModel.CONSULTA" />
+          <EntitySet Name="CORPORACION" EntityType="DQBaseModel.CORPORACION" />
+          <EntitySet Name="GRUPOTERAPEUTICO" EntityType="DQBaseModel.GRUPOTERAPEUTICO" />
+          <EntitySet Name="HISTORIALUSUARIO" EntityType="DQBaseModel.HISTORIALUSUARIO" />
+          <EntitySet Name="HISTORICOPRECIO" EntityType="DQBaseModel.HISTORICOPRECIO" />
+          <EntitySet Name="LABORATORIO" EntityType="DQBaseModel.LABORATORIO" />
+          <EntitySet Name="MENU" EntityType="DQBaseModel.MENU" />
+          <EntitySet Name="MOVIMIENTOSUBPRODUCTO" EntityType="DQBaseModel.MOVIMIENTOSUBPRODUCTO" />
+          <EntitySet Name="PRODUCTO" EntityType="DQBaseModel.PRODUCTO" />
+          <EntitySet Name="ROL" EntityType="DQBaseModel.ROL" />
+          <EntitySet Name="ROLMENU" EntityType="DQBaseModel.ROLMENU" />
+          <EntitySet Name="ROLUSUARIO" EntityType="DQBaseModel.ROLUSUARIO" />
+          <EntitySet Name="SUBPRODUCTO" EntityType="DQBaseModel.SUBPRODUCTO" />
+          <EntitySet Name="UBICACIONGEOGRAFICA" EntityType="DQBaseModel.UBICACIONGEOGRAFICA" />
+          <EntitySet Name="USUARIO" EntityType="DQBaseModel.USUARIO" />
+          <EntitySet Name="VENTA" EntityType="DQBaseModel.VENTA" />
+          <AssociationSet Name="FK_CONSULTA_USUARIOCO_USUARIO" Association="DQBaseModel.FK_CONSULTA_USUARIOCO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="CONSULTA" EntitySet="CONSULTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LABORATO_CORPORACI_CORPORAC" Association="DQBaseModel.FK_LABORATO_CORPORACI_CORPORAC">
+            <End Role="CORPORACION" EntitySet="CORPORACION" />
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBPRODU_GRUPOSUBP_GRUPOTER" Association="DQBaseModel.FK_SUBPRODU_GRUPOSUBP_GRUPOTER">
+            <End Role="GRUPOTERAPEUTICO" EntitySet="GRUPOTERAPEUTICO" />
+            <End Role="SUBPRODUCTO" EntitySet="SUBPRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIA_USUARIOHI_USUARIO" Association="DQBaseModel.FK_HISTORIA_USUARIOHI_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="HISTORIALUSUARIO" EntitySet="HISTORIALUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIC_MOVIMIENT_MOVIMIEN" Association="DQBaseModel.FK_HISTORIC_MOVIMIENT_MOVIMIEN">
+            <End Role="MOVIMIENTOSUBPRODUCTO" EntitySet="MOVIMIENTOSUBPRODUCTO" />
+            <End Role="HISTORICOPRECIO" EntitySet="HISTORICOPRECIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LABORATO_UBICACION_UBICACIO" Association="DQBaseModel.FK_LABORATO_UBICACION_UBICACIO">
+            <End Role="UBICACIONGEOGRAFICA" EntitySet="UBICACIONGEOGRAFICA" />
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVIMIEN_LABORATOR_LABORATO" Association="DQBaseModel.FK_MOVIMIEN_LABORATOR_LABORATO">
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+            <End Role="MOVIMIENTOSUBPRODUCTO" EntitySet="MOVIMIENTOSUBPRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_LABORATOR_LABORATO" Association="DQBaseModel.FK_USUARIO_LABORATOR_LABORATO">
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_LABORATOR_LABORATO" Association="DQBaseModel.FK_VENTA_LABORATOR_LABORATO">
+            <End Role="LABORATORIO" EntitySet="LABORATORIO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLMENU_MENUROL_MENU" Association="DQBaseModel.FK_ROLMENU_MENUROL_MENU">
+            <End Role="MENU" EntitySet="MENU" />
+            <End Role="ROLMENU" EntitySet="ROLMENU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVIMIEN_SUBPRODUC_SUBPRODU" Association="DQBaseModel.FK_MOVIMIEN_SUBPRODUC_SUBPRODU">
+            <End Role="SUBPRODUCTO" EntitySet="SUBPRODUCTO" />
+            <End Role="MOVIMIENTOSUBPRODUCTO" EntitySet="MOVIMIENTOSUBPRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_MOVIMIENT_MOVIMIEN" Association="DQBaseModel.FK_VENTA_MOVIMIENT_MOVIMIEN">
+            <End Role="MOVIMIENTOSUBPRODUCTO" EntitySet="MOVIMIENTOSUBPRODUCTO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBPRODU_PRODUCTOS_PRODUCTO" Association="DQBaseModel.FK_SUBPRODU_PRODUCTOS_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="SUBPRODUCTO" EntitySet="SUBPRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLMENU_ROLMENU_ROL" Association="DQBaseModel.FK_ROLMENU_ROLMENU_ROL">
+            <End Role="ROL" EntitySet="ROL" />
+            <End Role="ROLMENU" EntitySet="ROLMENU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLUSUAR_ROLUSUARI_ROL" Association="DQBaseModel.FK_ROLUSUAR_ROLUSUARI_ROL">
+            <End Role="ROL" EntitySet="ROL" />
+            <End Role="ROLUSUARIO" EntitySet="ROLUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLUSUAR_USUARIORO_USUARIO" Association="DQBaseModel.FK_ROLUSUAR_USUARIORO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="ROLUSUARIO" EntitySet="ROLUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_UBICACION_UBICACIO" Association="DQBaseModel.FK_VENTA_UBICACION_UBICACIO">
+            <End Role="UBICACIONGEOGRAFICA" EntitySet="UBICACIONGEOGRAFICA" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VENTA_USUARIOVE_USUARIO" Association="DQBaseModel.FK_VENTA_USUARIOVE_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="VENTA" EntitySet="VENTA" />
+          </AssociationSet>
+          <AssociationSet Name="Ubicacion_Corporacion" Association="DQBaseModel.Ubicacion_Corporacion">
+            <End Role="UBICACIONGEOGRAFICA" EntitySet="UBICACIONGEOGRAFICA" />
+            <End Role="CORPORACION" EntitySet="CORPORACION" />
+          </AssociationSet>
+          <EntitySet Name="Ciclo" EntityType="DQBaseModel.Ciclo" />
+          <FunctionImport Name="GetCicloVentas" ReturnType="Collection(DQBaseModel.GetCicloVentasResult)">
+            <Parameter Name="fechaInicioActual" Mode="In" Type="DateTime" />
+            <Parameter Name="fechaFinActual" Mode="In" Type="DateTime" />
+            <Parameter Name="fechaInicioAnterior" Mode="In" Type="DateTime" />
+            <Parameter Name="fechaFinAnterior" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="CATALOGO">
+          <Key>
+            <PropertyRef Name="IDCATALAGO" />
+          </Key>
+          <Property Type="Guid" Name="IDCATALAGO" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCIONCATALOGO" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TABLA" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOCATALOGO" Nullable="false" />
+          <Property Type="String" Name="CODIGO" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CONSULTA">
+          <Key>
+            <PropertyRef Name="IDCONSULTA" />
+          </Key>
+          <Property Type="Guid" Name="IDCONSULTA" Nullable="false" />
+          <Property Type="Guid" Name="IDUSUARIO" Nullable="false" />
+          <Property Type="Guid" Name="IDTABLA" Nullable="false" />
+          <Property Type="String" Name="NOMBRECONSULTA" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CONSULTA1" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOCONSULTA" Nullable="false" />
+          <NavigationProperty Name="USUARIO" Relationship="DQBaseModel.FK_CONSULTA_USUARIOCO_USUARIO" FromRole="CONSULTA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="CORPORACION">
+          <Key>
+            <PropertyRef Name="IDCORPORACION" />
+          </Key>
+          <Property Type="Guid" Name="IDCORPORACION" Nullable="false" />
+          <Property Type="String" Name="NOMBRECORPORACION" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ABREVIATURACORPORACION" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOCORPORACION" Nullable="false" />
+          <NavigationProperty Name="LABORATORIO" Relationship="DQBaseModel.FK_LABORATO_CORPORACI_CORPORAC" FromRole="CORPORACION" ToRole="LABORATORIO" />
+          <Property Type="Guid" Name="IdUbicacion" />
+          <NavigationProperty Name="UBICACIONGEOGRAFICA" Relationship="DQBaseModel.Ubicacion_Corporacion" FromRole="CORPORACION" ToRole="UBICACIONGEOGRAFICA" />
+        </EntityType>
+        <EntityType Name="GRUPOTERAPEUTICO">
+          <Key>
+            <PropertyRef Name="IDGRUPO" />
+          </Key>
+          <Property Type="Guid" Name="IDGRUPO" Nullable="false" />
+          <Property Type="Guid" Name="IDSUBGRUPO" />
+          <Property Type="String" Name="ABREVIATURAGRUPOTER" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="NOMBREGRUPOTER" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRIPCIONGRUPOTER" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOGRUPOTER" Nullable="false" />
+          <NavigationProperty Name="SUBPRODUCTO" Relationship="DQBaseModel.FK_SUBPRODU_GRUPOSUBP_GRUPOTER" FromRole="GRUPOTERAPEUTICO" ToRole="SUBPRODUCTO" />
+        </EntityType>
+        <EntityType Name="HISTORIALUSUARIO">
+          <Key>
+            <PropertyRef Name="IDHISTORIAL" />
+          </Key>
+          <Property Type="Guid" Name="IDHISTORIAL" Nullable="false" />
+          <Property Type="Guid" Name="IDUSUARIO" Nullable="false" />
+          <Property Type="DateTime" Name="FECHAHISTORIAL" Nullable="false" />
+          <Property Type="String" Name="ESTADOUSUARIO" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SERVICIOUSUARIO" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COMENTARIO" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOHISTORIALUSU" />
+          <NavigationProperty Name="USUARIO" Relationship="DQBaseModel.FK_HISTORIA_USUARIOHI_USUARIO" FromRole="HISTORIALUSUARIO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="HISTORICOPRECIO">
+          <Key>
+            <PropertyRef Name="IDHISTORICOPRECIO" />
+          </Key>
+          <Property Type="Guid" Name="IDHISTORICOPRECIO" Nullable="false" />
+          <Property Type="Guid" Name="CODIGOSUBPRODUCTO" Nullable="false" />
+          <Property Type="Decimal" Name="PRECIO" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="FECHAHISTORICOPRECIO" Nullable="false" />
+          <NavigationProperty Name="MOVIMIENTOSUBPRODUCTO" Relationship="DQBaseModel.FK_HISTORIC_MOVIMIENT_MOVIMIEN" FromRole="HISTORICOPRECIO" ToRole="MOVIMIENTOSUBPRODUCTO" />
+        </EntityType>
+        <EntityType Name="LABORATORIO">
+          <Key>
+            <PropertyRef Name="IDLABORATORIO" />
+          </Key>
+          <Property Type="Guid" Name="IDLABORATORIO" Nullable="false" />
+          <Property Type="Guid" Name="IDUBICACION" Nullable="false" />
+          <Property Type="Guid" Name="IDCORPORACION" />
+          <Property Type="String" Name="NOMBRELABORATORIO" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ABREVIATURALABORATORIO" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="DIRECCION" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DIRECCION2" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TELEFONO" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ORIGEN" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="OBSERVACION" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOLABORATORIO" Nullable="false" />
+          <NavigationProperty Name="CORPORACION" Relationship="DQBaseModel.FK_LABORATO_CORPORACI_CORPORAC" FromRole="LABORATORIO" ToRole="CORPORACION" />
+          <NavigationProperty Name="UBICACIONGEOGRAFICA" Relationship="DQBaseModel.FK_LABORATO_UBICACION_UBICACIO" FromRole="LABORATORIO" ToRole="UBICACIONGEOGRAFICA" />
+          <NavigationProperty Name="MOVIMIENTOSUBPRODUCTO" Relationship="DQBaseModel.FK_MOVIMIEN_LABORATOR_LABORATO" FromRole="LABORATORIO" ToRole="MOVIMIENTOSUBPRODUCTO" />
+          <NavigationProperty Name="USUARIO" Relationship="DQBaseModel.FK_USUARIO_LABORATOR_LABORATO" FromRole="LABORATORIO" ToRole="USUARIO" />
+          <NavigationProperty Name="VENTA" Relationship="DQBaseModel.FK_VENTA_LABORATOR_LABORATO" FromRole="LABORATORIO" ToRole="VENTA" />
+        </EntityType>
+        <EntityType Name="MENU">
+          <Key>
+            <PropertyRef Name="IDMENU" />
+          </Key>
+          <Property Type="Guid" Name="IDMENU" Nullable="false" />
+          <Property Type="Guid" Name="IDMENUPADRE" />
+          <Property Type="Int32" Name="NIVELMENU" />
+          <Property Type="String" Name="DESCRIPCIONMENU" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RUTA" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ROLMENU" Relationship="DQBaseModel.FK_ROLMENU_MENUROL_MENU" FromRole="MENU" ToRole="ROLMENU" />
+        </EntityType>
+        <EntityType Name="MOVIMIENTOSUBPRODUCTO">
+          <Key>
+            <PropertyRef Name="CODIGOSUBPRODUCTO" />
+          </Key>
+          <Property Type="Guid" Name="CODIGOSUBPRODUCTO" Nullable="false" />
+          <Property Type="Guid" Name="IDSUBPRODUCTO" Nullable="false" />
+          <Property Type="Guid" Name="IDLABORATORIO" Nullable="false" />
+          <Property Type="String" Name="CODIGOPRODUCTOLABORATORIO" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESNUEVO" Nullable="false" />
+          <Property Type="DateTime" Name="FECHALANZAMIENTO" Nullable="false" />
+          <NavigationProperty Name="HISTORICOPRECIO" Relationship="DQBaseModel.FK_HISTORIC_MOVIMIENT_MOVIMIEN" FromRole="MOVIMIENTOSUBPRODUCTO" ToRole="HISTORICOPRECIO" />
+          <NavigationProperty Name="LABORATORIO" Relationship="DQBaseModel.FK_MOVIMIEN_LABORATOR_LABORATO" FromRole="MOVIMIENTOSUBPRODUCTO" ToRole="LABORATORIO" />
+          <NavigationProperty Name="SUBPRODUCTO" Relationship="DQBaseModel.FK_MOVIMIEN_SUBPRODUC_SUBPRODU" FromRole="MOVIMIENTOSUBPRODUCTO" ToRole="SUBPRODUCTO" />
+          <NavigationProperty Name="VENTA" Relationship="DQBaseModel.FK_VENTA_MOVIMIENT_MOVIMIEN" FromRole="MOVIMIENTOSUBPRODUCTO" ToRole="VENTA" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="IDPRODUCTO" />
+          </Key>
+          <Property Type="Guid" Name="IDPRODUCTO" Nullable="false" />
+          <Property Type="String" Name="NOMBREPRODUCTO" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOPRODUCTO" Nullable="false" />
+          <NavigationProperty Name="SUBPRODUCTO" Relationship="DQBaseModel.FK_SUBPRODU_PRODUCTOS_PRODUCTO" FromRole="PRODUCTO" ToRole="SUBPRODUCTO" />
+        </EntityType>
+        <EntityType Name="ROL">
+          <Key>
+            <PropertyRef Name="IDROL" />
+          </Key>
+          <Property Type="Guid" Name="IDROL" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCIONROL" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ROLMENU" Relationship="DQBaseModel.FK_ROLMENU_ROLMENU_ROL" FromRole="ROL" ToRole="ROLMENU" />
+          <NavigationProperty Name="ROLUSUARIO" Relationship="DQBaseModel.FK_ROLUSUAR_ROLUSUARI_ROL" FromRole="ROL" ToRole="ROLUSUARIO" />
+        </EntityType>
+        <EntityType Name="ROLMENU">
+          <Key>
+            <PropertyRef Name="IDROLMENU" />
+          </Key>
+          <Property Type="Guid" Name="IDROLMENU" Nullable="false" />
+          <Property Type="Guid" Name="IDROL" Nullable="false" />
+          <Property Type="Guid" Name="IDMENU" Nullable="false" />
+          <NavigationProperty Name="MENU" Relationship="DQBaseModel.FK_ROLMENU_MENUROL_MENU" FromRole="ROLMENU" ToRole="MENU" />
+          <NavigationProperty Name="ROL" Relationship="DQBaseModel.FK_ROLMENU_ROLMENU_ROL" FromRole="ROLMENU" ToRole="ROL" />
+        </EntityType>
+        <EntityType Name="ROLUSUARIO">
+          <Key>
+            <PropertyRef Name="IDROLUSUARIO" />
+          </Key>
+          <Property Type="Guid" Name="IDROLUSUARIO" Nullable="false" />
+          <Property Type="Guid" Name="IDUSUARIO" Nullable="false" />
+          <Property Type="Guid" Name="IDROL" Nullable="false" />
+          <NavigationProperty Name="ROL" Relationship="DQBaseModel.FK_ROLUSUAR_ROLUSUARI_ROL" FromRole="ROLUSUARIO" ToRole="ROL" />
+          <NavigationProperty Name="USUARIO" Relationship="DQBaseModel.FK_ROLUSUAR_USUARIORO_USUARIO" FromRole="ROLUSUARIO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="SUBPRODUCTO">
+          <Key>
+            <PropertyRef Name="IDSUBPRODUCTO" />
+          </Key>
+          <Property Type="Guid" Name="IDSUBPRODUCTO" Nullable="false" />
+          <Property Type="Guid" Name="IDPRODUCTO" Nullable="false" />
+          <Property Type="Guid" Name="IDGRUPO" Nullable="false" />
+          <Property Type="Guid" Name="IDAPLICACION" />
+          <Property Type="Guid" Name="IDFORMAPROD" />
+          <Property Type="Guid" Name="IDTIPOMERCADO" />
+          <Property Type="Guid" Name="IDTIPOPRODUCTO" />
+          <Property Type="String" Name="PRESENTACION" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="CONCENTRACION" Nullable="false" />
+          <Property Type="String" Name="UNIDAD" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Int16" Name="CANTIDAD" Nullable="false" />
+          <Property Type="String" Name="PRINCIPIOACTIVO" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="INDICACIONESDEUSO" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOSUBPRODUCTO" Nullable="false" />
+          <NavigationProperty Name="GRUPOTERAPEUTICO" Relationship="DQBaseModel.FK_SUBPRODU_GRUPOSUBP_GRUPOTER" FromRole="SUBPRODUCTO" ToRole="GRUPOTERAPEUTICO" />
+          <NavigationProperty Name="MOVIMIENTOSUBPRODUCTO" Relationship="DQBaseModel.FK_MOVIMIEN_SUBPRODUC_SUBPRODU" FromRole="SUBPRODUCTO" ToRole="MOVIMIENTOSUBPRODUCTO" />
+          <NavigationProperty Name="PRODUCTO" Relationship="DQBaseModel.FK_SUBPRODU_PRODUCTOS_PRODUCTO" FromRole="SUBPRODUCTO" ToRole="PRODUCTO" />
+        </EntityType>
+        <EntityType Name="UBICACIONGEOGRAFICA">
+          <Key>
+            <PropertyRef Name="IDUBICACION" />
+          </Key>
+          <Property Type="Guid" Name="IDUBICACION" Nullable="false" />
+          <Property Type="String" Name="NOMBREUBICACION" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="IDPADRE" />
+          <Property Type="String" Name="CATEGORIAUBICACION" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOUBICACION" />
+          <NavigationProperty Name="LABORATORIO" Relationship="DQBaseModel.FK_LABORATO_UBICACION_UBICACIO" FromRole="UBICACIONGEOGRAFICA" ToRole="LABORATORIO" />
+          <NavigationProperty Name="VENTA" Relationship="DQBaseModel.FK_VENTA_UBICACION_UBICACIO" FromRole="UBICACIONGEOGRAFICA" ToRole="VENTA" />
+          <NavigationProperty Name="CORPORACION" Relationship="DQBaseModel.Ubicacion_Corporacion" FromRole="UBICACIONGEOGRAFICA" ToRole="CORPORACION" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="IDUSUARIO" />
+          </Key>
+          <Property Type="Guid" Name="IDUSUARIO" Nullable="false" />
+          <Property Type="Guid" Name="IDLABORATORIO" />
+          <Property Type="String" Name="NOMBRECOMPLETO" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="USUARIO1" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLAVE" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ESBORRADOUSUARIO" Nullable="false" />
+          <NavigationProperty Name="CONSULTA" Relationship="DQBaseModel.FK_CONSULTA_USUARIOCO_USUARIO" FromRole="USUARIO" ToRole="CONSULTA" />
+          <NavigationProperty Name="HISTORIALUSUARIO" Relationship="DQBaseModel.FK_HISTORIA_USUARIOHI_USUARIO" FromRole="USUARIO" ToRole="HISTORIALUSUARIO" />
+          <NavigationProperty Name="LABORATORIO" Relationship="DQBaseModel.FK_USUARIO_LABORATOR_LABORATO" FromRole="USUARIO" ToRole="LABORATORIO" />
+          <NavigationProperty Name="ROLUSUARIO" Relationship="DQBaseModel.FK_ROLUSUAR_USUARIORO_USUARIO" FromRole="USUARIO" ToRole="ROLUSUARIO" />
+          <NavigationProperty Name="VENTA" Relationship="DQBaseModel.FK_VENTA_USUARIOVE_USUARIO" FromRole="USUARIO" ToRole="VENTA" />
+          <Property Type="DateTime" Name="FechaCreacion" />
+          <Property Type="DateTime" Name="FechaCaducidad" />
+        </EntityType>
+        <EntityType Name="VENTA">
+          <Key>
+            <PropertyRef Name="IDVENTA" />
+          </Key>
+          <Property Type="Guid" Name="IDVENTA" Nullable="false" />
+          <Property Type="Guid" Name="CODIGOSUBPRODUCTO" Nullable="false" />
+          <Property Type="Guid" Name="IDUSUARIO" Nullable="false" />
+          <Property Type="Guid" Name="IDUBICACION" Nullable="false" />
+          <Property Type="Guid" Name="IDLABORATORIO" Nullable="false" />
+          <Property Type="DateTime" Name="FECHA" Nullable="false" />
+          <Property Type="Int32" Name="CANTIDADVENTA" Nullable="false" />
+          <Property Type="Decimal" Name="TOTALVENTA" Precision="19" Scale="4" />
+          <Property Type="Boolean" Name="ESCORRECTO" Nullable="false" />
+          <Property Type="Boolean" Name="ESPUBLICO" Nullable="false" />
+          <Property Type="String" Name="NOMBREINSTITUCION" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="LABORATORIO" Relationship="DQBaseModel.FK_VENTA_LABORATOR_LABORATO" FromRole="VENTA" ToRole="LABORATORIO" />
+          <NavigationProperty Name="MOVIMIENTOSUBPRODUCTO" Relationship="DQBaseModel.FK_VENTA_MOVIMIENT_MOVIMIEN" FromRole="VENTA" ToRole="MOVIMIENTOSUBPRODUCTO" />
+          <NavigationProperty Name="UBICACIONGEOGRAFICA" Relationship="DQBaseModel.FK_VENTA_UBICACION_UBICACIO" FromRole="VENTA" ToRole="UBICACIONGEOGRAFICA" />
+          <NavigationProperty Name="USUARIO" Relationship="DQBaseModel.FK_VENTA_USUARIOVE_USUARIO" FromRole="VENTA" ToRole="USUARIO" />
+        </EntityType>
+        <Association Name="FK_CONSULTA_USUARIOCO_USUARIO">
+          <End Type="DQBaseModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="DQBaseModel.CONSULTA" Role="CONSULTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="CONSULTA">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LABORATO_CORPORACI_CORPORAC">
+          <End Type="DQBaseModel.CORPORACION" Role="CORPORACION" Multiplicity="0..1" />
+          <End Type="DQBaseModel.LABORATORIO" Role="LABORATORIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CORPORACION">
+              <PropertyRef Name="IDCORPORACION" />
+            </Principal>
+            <Dependent Role="LABORATORIO">
+              <PropertyRef Name="IDCORPORACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBPRODU_GRUPOSUBP_GRUPOTER">
+          <End Type="DQBaseModel.GRUPOTERAPEUTICO" Role="GRUPOTERAPEUTICO" Multiplicity="1" />
+          <End Type="DQBaseModel.SUBPRODUCTO" Role="SUBPRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRUPOTERAPEUTICO">
+              <PropertyRef Name="IDGRUPO" />
+            </Principal>
+            <Dependent Role="SUBPRODUCTO">
+              <PropertyRef Name="IDGRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIA_USUARIOHI_USUARIO">
+          <End Type="DQBaseModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="DQBaseModel.HISTORIALUSUARIO" Role="HISTORIALUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="HISTORIALUSUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIC_MOVIMIENT_MOVIMIEN">
+          <End Type="DQBaseModel.MOVIMIENTOSUBPRODUCTO" Role="MOVIMIENTOSUBPRODUCTO" Multiplicity="1" />
+          <End Type="DQBaseModel.HISTORICOPRECIO" Role="HISTORICOPRECIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOVIMIENTOSUBPRODUCTO">
+              <PropertyRef Name="CODIGOSUBPRODUCTO" />
+            </Principal>
+            <Dependent Role="HISTORICOPRECIO">
+              <PropertyRef Name="CODIGOSUBPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LABORATO_UBICACION_UBICACIO">
+          <End Type="DQBaseModel.UBICACIONGEOGRAFICA" Role="UBICACIONGEOGRAFICA" Multiplicity="1" />
+          <End Type="DQBaseModel.LABORATORIO" Role="LABORATORIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UBICACIONGEOGRAFICA">
+              <PropertyRef Name="IDUBICACION" />
+            </Principal>
+            <Dependent Role="LABORATORIO">
+              <PropertyRef Name="IDUBICACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVIMIEN_LABORATOR_LABORATO">
+          <End Type="DQBaseModel.LABORATORIO" Role="LABORATORIO" Multiplicity="1" />
+          <End Type="DQBaseModel.MOVIMIENTOSUBPRODUCTO" Role="MOVIMIENTOSUBPRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LABORATORIO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Principal>
+            <Dependent Role="MOVIMIENTOSUBPRODUCTO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_LABORATOR_LABORATO">
+          <End Type="DQBaseModel.LABORATORIO" Role="LABORATORIO" Multiplicity="0..1" />
+          <End Type="DQBaseModel.USUARIO" Role="USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LABORATORIO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_LABORATOR_LABORATO">
+          <End Type="DQBaseModel.LABORATORIO" Role="LABORATORIO" Multiplicity="1" />
+          <End Type="DQBaseModel.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LABORATORIO">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IDLABORATORIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLMENU_MENUROL_MENU">
+          <End Type="DQBaseModel.MENU" Role="MENU" Multiplicity="1" />
+          <End Type="DQBaseModel.ROLMENU" Role="ROLMENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MENU">
+              <PropertyRef Name="IDMENU" />
+            </Principal>
+            <Dependent Role="ROLMENU">
+              <PropertyRef Name="IDMENU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVIMIEN_SUBPRODUC_SUBPRODU">
+          <End Type="DQBaseModel.SUBPRODUCTO" Role="SUBPRODUCTO" Multiplicity="1" />
+          <End Type="DQBaseModel.MOVIMIENTOSUBPRODUCTO" Role="MOVIMIENTOSUBPRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBPRODUCTO">
+              <PropertyRef Name="IDSUBPRODUCTO" />
+            </Principal>
+            <Dependent Role="MOVIMIENTOSUBPRODUCTO">
+              <PropertyRef Name="IDSUBPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_MOVIMIENT_MOVIMIEN">
+          <End Type="DQBaseModel.MOVIMIENTOSUBPRODUCTO" Role="MOVIMIENTOSUBPRODUCTO" Multiplicity="1" />
+          <End Type="DQBaseModel.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOVIMIENTOSUBPRODUCTO">
+              <PropertyRef Name="CODIGOSUBPRODUCTO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="CODIGOSUBPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBPRODU_PRODUCTOS_PRODUCTO">
+          <End Type="DQBaseModel.PRODUCTO" Role="PRODUCTO" Multiplicity="1" />
+          <End Type="DQBaseModel.SUBPRODUCTO" Role="SUBPRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="SUBPRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLMENU_ROLMENU_ROL">
+          <End Type="DQBaseModel.ROL" Role="ROL" Multiplicity="1" />
+          <End Type="DQBaseModel.ROLMENU" Role="ROLMENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="IDROL" />
+            </Principal>
+            <Dependent Role="ROLMENU">
+              <PropertyRef Name="IDROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLUSUAR_ROLUSUARI_ROL">
+          <End Type="DQBaseModel.ROL" Role="ROL" Multiplicity="1" />
+          <End Type="DQBaseModel.ROLUSUARIO" Role="ROLUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROL">
+              <PropertyRef Name="IDROL" />
+            </Principal>
+            <Dependent Role="ROLUSUARIO">
+              <PropertyRef Name="IDROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLUSUAR_USUARIORO_USUARIO">
+          <End Type="DQBaseModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="DQBaseModel.ROLUSUARIO" Role="ROLUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="ROLUSUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_UBICACION_UBICACIO">
+          <End Type="DQBaseModel.UBICACIONGEOGRAFICA" Role="UBICACIONGEOGRAFICA" Multiplicity="1" />
+          <End Type="DQBaseModel.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UBICACIONGEOGRAFICA">
+              <PropertyRef Name="IDUBICACION" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IDUBICACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VENTA_USUARIOVE_USUARIO">
+          <End Type="DQBaseModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="DQBaseModel.VENTA" Role="VENTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="IDUSUARIO" />
+            </Principal>
+            <Dependent Role="VENTA">
+              <PropertyRef Name="IDUSUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Ubicacion_Corporacion">
+          <End Type="DQBaseModel.UBICACIONGEOGRAFICA" Role="UBICACIONGEOGRAFICA" Multiplicity="0..1" />
+          <End Type="DQBaseModel.CORPORACION" Role="CORPORACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UBICACIONGEOGRAFICA">
+              <PropertyRef Name="IDUBICACION" />
+            </Principal>
+            <Dependent Role="CORPORACION">
+              <PropertyRef Name="IdUbicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ciclo">
+          <Key>
+            <PropertyRef Name="IdCiclo" />
+          </Key>
+          <Property Type="Guid" Name="IdCiclo" Nullable="false" />
+          <Property Type="DateTime" Name="FechaCiclo" Nullable="false" />
+          <Property Type="Boolean" Name="EsPublicado" Nullable="false" />
+          <Property Type="Boolean" Name="EsBorrado" />
+          <Property Type="DateTime" Name="FechaPublicacion" />
+        </EntityType>
+        <ComplexType Name="GetCicloVentasResult" >
+          <Property Type="String" Name="Laboratorio" Nullable="false" />
+          <Property Type="Double" Name="CantidadVentaAnterior" Nullable="false" />
+          <Property Type="Double" Name="TotalVentaAnterior" Nullable="false" />
+          <Property Type="Double" Name="CantidadVentaActual" Nullable="false" />
+          <Property Type="Double" Name="TotalVentaActual" Nullable="false" />
+        </ComplexType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DQBaseModelStoreContainer" CdmEntityContainer="DQBaseContext">
+          <EntitySetMapping Name="CATALOGO">
+            <EntityTypeMapping TypeName="DQBaseModel.CATALOGO">
+              <MappingFragment StoreEntitySet="CATALOGO">
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="ESBORRADOCATALOGO" ColumnName="ESBORRADOCATALOGO" />
+                <ScalarProperty Name="TABLA" ColumnName="TABLA" />
+                <ScalarProperty Name="DESCRIPCIONCATALOGO" ColumnName="DESCRIPCIONCATALOGO" />
+                <ScalarProperty Name="IDCATALAGO" ColumnName="IDCATALAGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONSULTA">
+            <EntityTypeMapping TypeName="DQBaseModel.CONSULTA">
+              <MappingFragment StoreEntitySet="CONSULTA">
+                <ScalarProperty Name="ESBORRADOCONSULTA" ColumnName="ESBORRADOCONSULTA" />
+                <ScalarProperty Name="CONSULTA1" ColumnName="CONSULTA" />
+                <ScalarProperty Name="NOMBRECONSULTA" ColumnName="NOMBRECONSULTA" />
+                <ScalarProperty Name="IDTABLA" ColumnName="IDTABLA" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="IDCONSULTA" ColumnName="IDCONSULTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CORPORACION">
+            <EntityTypeMapping TypeName="DQBaseModel.CORPORACION">
+              <MappingFragment StoreEntitySet="CORPORACION">
+                <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
+                <ScalarProperty Name="ESBORRADOCORPORACION" ColumnName="ESBORRADOCORPORACION" />
+                <ScalarProperty Name="ABREVIATURACORPORACION" ColumnName="ABREVIATURACORPORACION" />
+                <ScalarProperty Name="NOMBRECORPORACION" ColumnName="NOMBRECORPORACION" />
+                <ScalarProperty Name="IDCORPORACION" ColumnName="IDCORPORACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRUPOTERAPEUTICO">
+            <EntityTypeMapping TypeName="DQBaseModel.GRUPOTERAPEUTICO">
+              <MappingFragment StoreEntitySet="GRUPOTERAPEUTICO">
+                <ScalarProperty Name="ESBORRADOGRUPOTER" ColumnName="ESBORRADOGRUPOTER" />
+                <ScalarProperty Name="DESCRIPCIONGRUPOTER" ColumnName="DESCRIPCIONGRUPOTER" />
+                <ScalarProperty Name="NOMBREGRUPOTER" ColumnName="NOMBREGRUPOTER" />
+                <ScalarProperty Name="ABREVIATURAGRUPOTER" ColumnName="ABREVIATURAGRUPOTER" />
+                <ScalarProperty Name="IDSUBGRUPO" ColumnName="IDSUBGRUPO" />
+                <ScalarProperty Name="IDGRUPO" ColumnName="IDGRUPO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORIALUSUARIO">
+            <EntityTypeMapping TypeName="DQBaseModel.HISTORIALUSUARIO">
+              <MappingFragment StoreEntitySet="HISTORIALUSUARIO">
+                <ScalarProperty Name="ESBORRADOHISTORIALUSU" ColumnName="ESBORRADOHISTORIALUSU" />
+                <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+                <ScalarProperty Name="SERVICIOUSUARIO" ColumnName="SERVICIOUSUARIO" />
+                <ScalarProperty Name="ESTADOUSUARIO" ColumnName="ESTADOUSUARIO" />
+                <ScalarProperty Name="FECHAHISTORIAL" ColumnName="FECHAHISTORIAL" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="IDHISTORIAL" ColumnName="IDHISTORIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORICOPRECIO">
+            <EntityTypeMapping TypeName="DQBaseModel.HISTORICOPRECIO">
+              <MappingFragment StoreEntitySet="HISTORICOPRECIO">
+                <ScalarProperty Name="FECHAHISTORICOPRECIO" ColumnName="FECHAHISTORICOPRECIO" />
+                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+                <ScalarProperty Name="CODIGOSUBPRODUCTO" ColumnName="CODIGOSUBPRODUCTO" />
+                <ScalarProperty Name="IDHISTORICOPRECIO" ColumnName="IDHISTORICOPRECIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LABORATORIO">
+            <EntityTypeMapping TypeName="DQBaseModel.LABORATORIO">
+              <MappingFragment StoreEntitySet="LABORATORIO">
+                <ScalarProperty Name="ESBORRADOLABORATORIO" ColumnName="ESBORRADOLABORATORIO" />
+                <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+                <ScalarProperty Name="ORIGEN" ColumnName="ORIGEN" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="DIRECCION2" ColumnName="DIRECCION2" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="ABREVIATURALABORATORIO" ColumnName="ABREVIATURALABORATORIO" />
+                <ScalarProperty Name="NOMBRELABORATORIO" ColumnName="NOMBRELABORATORIO" />
+                <ScalarProperty Name="IDCORPORACION" ColumnName="IDCORPORACION" />
+                <ScalarProperty Name="IDUBICACION" ColumnName="IDUBICACION" />
+                <ScalarProperty Name="IDLABORATORIO" ColumnName="IDLABORATORIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MENU">
+            <EntityTypeMapping TypeName="DQBaseModel.MENU">
+              <MappingFragment StoreEntitySet="MENU">
+                <ScalarProperty Name="RUTA" ColumnName="RUTA" />
+                <ScalarProperty Name="DESCRIPCIONMENU" ColumnName="DESCRIPCIONMENU" />
+                <ScalarProperty Name="NIVELMENU" ColumnName="NIVELMENU" />
+                <ScalarProperty Name="IDMENUPADRE" ColumnName="IDMENUPADRE" />
+                <ScalarProperty Name="IDMENU" ColumnName="IDMENU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MOVIMIENTOSUBPRODUCTO">
+            <EntityTypeMapping TypeName="DQBaseModel.MOVIMIENTOSUBPRODUCTO">
+              <MappingFragment StoreEntitySet="MOVIMIENTOSUBPRODUCTO">
+                <ScalarProperty Name="FECHALANZAMIENTO" ColumnName="FECHALANZAMIENTO" />
+                <ScalarProperty Name="ESNUEVO" ColumnName="ESNUEVO" />
+                <ScalarProperty Name="CODIGOPRODUCTOLABORATORIO" ColumnName="CODIGOPRODUCTOLABORATORIO" />
+                <ScalarProperty Name="IDLABORATORIO" ColumnName="IDLABORATORIO" />
+                <ScalarProperty Name="IDSUBPRODUCTO" ColumnName="IDSUBPRODUCTO" />
+                <ScalarProperty Name="CODIGOSUBPRODUCTO" ColumnName="CODIGOSUBPRODUCTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTO">
+            <EntityTypeMapping TypeName="DQBaseModel.PRODUCTO">
+              <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="ESBORRADOPRODUCTO" ColumnName="ESBORRADOPRODUCTO" />
+                <ScalarProperty Name="NOMBREPRODUCTO" ColumnName="NOMBREPRODUCTO" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROL">
+            <EntityTypeMapping TypeName="DQBaseModel.ROL">
+              <MappingFragment StoreEntitySet="ROL">
+                <ScalarProperty Name="DESCRIPCIONROL" ColumnName="DESCRIPCIONROL" />
+                <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLMENU">
+            <EntityTypeMapping TypeName="DQBaseModel.ROLMENU">
+              <MappingFragment StoreEntitySet="ROLMENU">
+                <ScalarProperty Name="IDMENU" ColumnName="IDMENU" />
+                <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+                <ScalarProperty Name="IDROLMENU" ColumnName="IDROLMENU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLUSUARIO">
+            <EntityTypeMapping TypeName="DQBaseModel.ROLUSUARIO">
+              <MappingFragment StoreEntitySet="ROLUSUARIO">
+                <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="IDROLUSUARIO" ColumnName="IDROLUSUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBPRODUCTO">
+            <EntityTypeMapping TypeName="DQBaseModel.SUBPRODUCTO">
+              <MappingFragment StoreEntitySet="SUBPRODUCTO">
+                <ScalarProperty Name="ESBORRADOSUBPRODUCTO" ColumnName="ESBORRADOSUBPRODUCTO" />
+                <ScalarProperty Name="INDICACIONESDEUSO" ColumnName="INDICACIONESDEUSO" />
+                <ScalarProperty Name="PRINCIPIOACTIVO" ColumnName="PRINCIPIOACTIVO" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+                <ScalarProperty Name="CONCENTRACION" ColumnName="CONCENTRACION" />
+                <ScalarProperty Name="PRESENTACION" ColumnName="PRESENTACION" />
+                <ScalarProperty Name="IDTIPOPRODUCTO" ColumnName="IDTIPOPRODUCTO" />
+                <ScalarProperty Name="IDTIPOMERCADO" ColumnName="IDTIPOMERCADO" />
+                <ScalarProperty Name="IDFORMAPROD" ColumnName="IDFORMAPROD" />
+                <ScalarProperty Name="IDAPLICACION" ColumnName="IDAPLICACION" />
+                <ScalarProperty Name="IDGRUPO" ColumnName="IDGRUPO" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="IDSUBPRODUCTO" ColumnName="IDSUBPRODUCTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UBICACIONGEOGRAFICA">
+            <EntityTypeMapping TypeName="DQBaseModel.UBICACIONGEOGRAFICA">
+              <MappingFragment StoreEntitySet="UBICACIONGEOGRAFICA">
+                <ScalarProperty Name="ESBORRADOUBICACION" ColumnName="ESBORRADOUBICACION" />
+                <ScalarProperty Name="CATEGORIAUBICACION" ColumnName="CATEGORIAUBICACION" />
+                <ScalarProperty Name="IDPADRE" ColumnName="IDPADRE" />
+                <ScalarProperty Name="NOMBREUBICACION" ColumnName="NOMBREUBICACION" />
+                <ScalarProperty Name="IDUBICACION" ColumnName="IDUBICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="DQBaseModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="ESBORRADOUSUARIO" ColumnName="ESBORRADOUSUARIO" />
+                <ScalarProperty Name="CLAVE" ColumnName="CLAVE" />
+                <ScalarProperty Name="USUARIO1" ColumnName="USUARIO" />
+                <ScalarProperty Name="NOMBRECOMPLETO" ColumnName="NOMBRECOMPLETO" />
+                <ScalarProperty Name="IDLABORATORIO" ColumnName="IDLABORATORIO" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENTA">
+            <EntityTypeMapping TypeName="DQBaseModel.VENTA">
+              <MappingFragment StoreEntitySet="VENTA">
+                <ScalarProperty Name="NOMBREINSTITUCION" ColumnName="NOMBREINSTITUCION" />
+                <ScalarProperty Name="ESPUBLICO" ColumnName="ESPUBLICO" />
+                <ScalarProperty Name="ESCORRECTO" ColumnName="ESCORRECTO" />
+                <ScalarProperty Name="TOTALVENTA" ColumnName="TOTALVENTA" />
+                <ScalarProperty Name="CANTIDADVENTA" ColumnName="CANTIDADVENTA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="IDLABORATORIO" ColumnName="IDLABORATORIO" />
+                <ScalarProperty Name="IDUBICACION" ColumnName="IDUBICACION" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="CODIGOSUBPRODUCTO" ColumnName="CODIGOSUBPRODUCTO" />
+                <ScalarProperty Name="IDVENTA" ColumnName="IDVENTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ciclo">
+            <EntityTypeMapping TypeName="DQBaseModel.Ciclo">
+              <MappingFragment StoreEntitySet="Ciclo">
+                <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+                <ScalarProperty Name="EsBorrado" ColumnName="EsBorrado" />
+                <ScalarProperty Name="EsPublicado" ColumnName="EsPublicado" />
+                <ScalarProperty Name="FechaCiclo" ColumnName="FechaCiclo" />
+                <ScalarProperty Name="IdCiclo" ColumnName="IdCiclo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetCicloVentas" FunctionName="DQBaseModel.Store.Get_CicloVentas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DQBaseModel.GetCicloVentasResult">
+                <ScalarProperty Name="Laboratorio" ColumnName="Laboratorio" />
+                <ScalarProperty Name="CantidadVentaAnterior" ColumnName="CantidadVentaAnterior" />
+                <ScalarProperty Name="TotalVentaAnterior" ColumnName="TotalVentaAnterior" />
+                <ScalarProperty Name="CantidadVentaActual" ColumnName="CantidadVentaActual" />
+                <ScalarProperty Name="TotalVentaActual" ColumnName="TotalVentaActual" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DQBaseModel">
+        <EntityTypeShape EntityType="DQBaseModel.CATALOGO" Width="1.5" PointX="5.75" PointY="2.125" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="DQBaseModel.CONSULTA" Width="1.5" PointX="7.5" PointY="11.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DQBaseModel.CORPORACION" Width="1.5" PointX="0.75" PointY="6.875" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="DQBaseModel.GRUPOTERAPEUTICO" Width="1.5" PointX="0.75" PointY="3" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DQBaseModel.HISTORIALUSUARIO" Width="1.5" PointX="7.5" PointY="14.875" Height="2.55719075520833" />
+        <EntityTypeShape EntityType="DQBaseModel.HISTORICOPRECIO" Width="1.5" PointX="7.5" PointY="8.875" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="DQBaseModel.LABORATORIO" Width="1.5" PointX="3" PointY="8.875" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="DQBaseModel.MENU" Width="1.5" PointX="8.25" PointY="21.5" Height="2.172587890624996" />
+        <EntityTypeShape EntityType="DQBaseModel.MOVIMIENTOSUBPRODUCTO" Width="1.5" PointX="5.25" PointY="8.375" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="DQBaseModel.PRODUCTO" Width="1.5" PointX="0.75" PointY="13.125" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="DQBaseModel.ROL" Width="1.5" PointX="8.25" PointY="18.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="DQBaseModel.ROLMENU" Width="1.5" PointX="10.5" PointY="18.625" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="DQBaseModel.ROLUSUARIO" Width="1.5" PointX="10.5" PointY="13.625" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="DQBaseModel.SUBPRODUCTO" Width="1.5" PointX="3" PointY="0.75" Height="4.2879036458333246" />
+        <EntityTypeShape EntityType="DQBaseModel.UBICACIONGEOGRAFICA" Width="1.5" PointX="0.75" PointY="9.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DQBaseModel.USUARIO" Width="1.5" PointX="5.25" PointY="13" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="DQBaseModel.VENTA" Width="1.5" PointX="10.5" PointY="8.375" Height="3.903300781249996" />
+        <AssociationConnector Association="DQBaseModel.FK_CONSULTA_USUARIOCO_USUARIO" >
+          <ConnectorPoint PointX="6.75" PointY="13.557444661458334" />
+          <ConnectorPoint PointX="7.5" PointY="13.557444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_LABORATO_CORPORACI_CORPORAC" >
+          <ConnectorPoint PointX="2.25" PointY="9.0574446614583337" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="9.0574446614583337" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="9.0574446614583337" />
+          <ConnectorPoint PointX="2.7291666666666665" PointY="9.0574446614583337" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="9.0574446614583337" />
+          <ConnectorPoint PointX="3" PointY="9.0574446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_SUBPRODU_GRUPOSUBP_GRUPOTER" >
+          <ConnectorPoint PointX="2.25" PointY="4.0189518229166623" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="4.0189518229166614" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="4.0189518229166623" />
+          <ConnectorPoint PointX="3" PointY="4.0189518229166623" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_HISTORIA_USUARIOHI_USUARIO" >
+          <ConnectorPoint PointX="6.75" PointY="15.696848958333334" />
+          <ConnectorPoint PointX="7.5" PointY="15.696848958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_HISTORIC_MOVIMIENT_MOVIMIEN" >
+          <ConnectorPoint PointX="6.75" PointY="9.8651432291666623" />
+          <ConnectorPoint PointX="7.5" PointY="9.8651432291666623" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_LABORATO_UBICACION_UBICACIO" >
+          <ConnectorPoint PointX="2.25" PointY="11.028595377604166" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.028595377604166" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="11.028595377604166" />
+          <ConnectorPoint PointX="3" PointY="11.028595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_MOVIMIEN_LABORATOR_LABORATO" >
+          <ConnectorPoint PointX="4.5" PointY="10.095896809895834" />
+          <ConnectorPoint PointX="5.25" PointY="10.095896809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_USUARIO_LABORATOR_LABORATO" >
+          <ConnectorPoint PointX="3.75" PointY="13.162903645833334" />
+          <ConnectorPoint PointX="3.75" PointY="14.840801281249998" />
+          <ConnectorPoint PointX="5.25" PointY="14.840801281249998" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_VENTA_LABORATOR_LABORATO" >
+          <ConnectorPoint PointX="4.5" PointY="11.533396809895834" />
+          <ConnectorPoint PointX="10.5" PointY="11.533396809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_ROLMENU_MENUROL_MENU" >
+          <ConnectorPoint PointX="9.75" PointY="22.586293945312498" />
+          <ConnectorPoint PointX="11.25" PointY="22.586293945312498" />
+          <ConnectorPoint PointX="11.25" PointY="20.605286458333339" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_MOVIMIEN_SUBPRODUC_SUBPRODU" >
+          <ConnectorPoint PointX="4.5" PointY="1.40625" />
+          <ConnectorPoint PointX="5.46875" PointY="1.40625" />
+          <ConnectorPoint PointX="5.46875" PointY="8.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_VENTA_MOVIMIENT_MOVIMIEN" >
+          <ConnectorPoint PointX="6.75" PointY="8.59375" />
+          <ConnectorPoint PointX="10.5" PointY="8.59375" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_SUBPRODU_PRODUCTOS_PRODUCTO" >
+          <ConnectorPoint PointX="2.25" PointY="13.126152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="12.751152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="2.3532239114583375" />
+          <ConnectorPoint PointX="3" PointY="2.3532239114583375" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_ROLMENU_ROLMENU_ROL" >
+          <ConnectorPoint PointX="9.75" PointY="19.643992513020834" />
+          <ConnectorPoint PointX="10.5" PointY="19.643992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_ROLUSUAR_ROLUSUARI_ROL" >
+          <ConnectorPoint PointX="9.40625" PointY="18.75" />
+          <ConnectorPoint PointX="9.40625" PointY="14.494944661458334" />
+          <ConnectorPoint PointX="10.166666666666666" PointY="14.494944661458334" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="14.494944661458334" />
+          <ConnectorPoint PointX="10.5" PointY="14.494944661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_ROLUSUAR_USUARIORO_USUARIO" >
+          <ConnectorPoint PointX="6.75" PointY="14.716222330729167" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="14.716222330729167" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="14.716222330729167" />
+          <ConnectorPoint PointX="10.5" PointY="14.716222330729167" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_VENTA_UBICACION_UBICACIO" >
+          <ConnectorPoint PointX="2.25" PointY="9.81346053846154" />
+          <ConnectorPoint PointX="2.5660744349011204" PointY="9.4973861035604177" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="9.3795349733626612" />
+          <ConnectorPoint PointX="2.6875" PointY="9.37596053846154" />
+          <ConnectorPoint PointX="2.6875" PointY="8" />
+          <ConnectorPoint PointX="5.385416666666667" PointY="7.9999999999999991" />
+          <ConnectorPoint PointX="5.552083333333333" PointY="8" />
+          <ConnectorPoint PointX="10.125" PointY="8" />
+          <ConnectorPoint PointX="10.5" PointY="8.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.FK_VENTA_USUARIOVE_USUARIO" >
+          <ConnectorPoint PointX="6.75" PointY="14.13683349609375" />
+          <ConnectorPoint PointX="7.25" PointY="14.13683349609375" />
+          <ConnectorPoint PointX="7.25" PointY="14.625" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="14.625" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="14.625" />
+          <ConnectorPoint PointX="10.25" PointY="14.625" />
+          <ConnectorPoint PointX="10.25" PointY="13.375" />
+          <ConnectorPoint PointX="11.25" PointY="13.375" />
+          <ConnectorPoint PointX="11.25" PointY="12.278300781249996" />
+        </AssociationConnector>
+        <AssociationConnector Association="DQBaseModel.Ubicacion_Corporacion" >
+          <ConnectorPoint PointX="1.5" PointY="9.75" />
+          <ConnectorPoint PointX="1.5" PointY="9.2398893229166674" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DQBaseModel.Ciclo" Width="1.5" PointX="8.125" PointY="2.125" Height="1.9802864583333388" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

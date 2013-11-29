@@ -1,0 +1,92 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Interfase.aspx.cs" Inherits="DQBase.Web.ui.Interfase" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContenedorPrincipal" runat="server">
+
+    <table class="style1">
+        <tr>
+            <td>
+                <asp:Label ID="Label1" runat="server" Text="Configuración de parametros"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="style1">
+                    <tr>
+                        <td class="style3">
+                            <asp:Label ID="Label2" runat="server" Text="Coorporación"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="ddlCorporaciones" runat="server" Height="16px" 
+                                Width="151px">
+                            </asp:DropDownList>
+                        &nbsp;<asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" 
+                                onclick="btnSeleccionar_Click" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style3">
+                            <asp:Label ID="Label3" runat="server" Text="Laboratorio"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="ddlLaboratorios" runat="server" Height="16px" 
+                                Width="151px">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style3">
+                            <asp:Label ID="Label4" runat="server" Text="Periodo"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style3">
+                            <asp:Label ID="Label5" runat="server" Text="Tipo de información"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:CheckBox ID="CheckBox1" runat="server" Text="Publico/Privado" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style3">
+                            <asp:Label ID="Label6" runat="server" Text="Cargar Archivo"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:FileUpload ID="FileUpload1" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style3">
+                            <asp:Label ID="Label7" runat="server" Text="Mensaje"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="TextBox1" runat="server" Height="65px" TextMode="MultiLine" 
+                                Width="329px"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <asp:Button ID="btnCargar" runat="server" Text="Cargar" />
+&nbsp;
+                <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" />
+                
+            </td>
+        </tr>
+    </table>
+
+</asp:Content>
+<asp:Content ID="Content3" runat="server" contentplaceholderid="head">
+    <style type="text/css">
+        .style3
+        {
+            width: 167px;
+        }
+    </style>
+</asp:Content>
+

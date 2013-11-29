@@ -1,0 +1,31 @@
+﻿using System;
+using System.Text;
+using System.Security.Cryptography;
+
+namespace DQBase.Entities
+{
+    /// <summary>
+    /// Clase que contiene extensions methods para el tipo de dato string
+    /// </summary>
+    public static class StringExtensions
+    {
+        /// <summary>
+        /// Encripta una cadena con el algoritmo MD5
+        /// </summary>
+        /// <param name="cadena">Cadena a convertir</param>
+        /// <returns>Retorna una cadena</returns>
+        /// <exception cref="System.ArgumentNullException"/>
+        public static string EncriptarMD5(this string cadena)
+        {
+            if(string.IsNullOrEmpty(cadena))
+                throw new ArgumentNullException("cadena");
+            MD5CryptoServiceProvider x = new MD5CryptoServiceProvider();
+            byte[] data = Encoding.ASCII.GetBytes(cadena);
+            data = x.ComputeHash(data);
+            string ret = "";
+            for (int i = 0; i < data.Length; i++)
+                ret += data[i].ToString("x2").ToUpper();
+            return ret;
+        }
+    }
+}

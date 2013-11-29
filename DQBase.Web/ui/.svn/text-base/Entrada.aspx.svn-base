@@ -1,0 +1,7 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Entrada.aspx.cs" Inherits="DQBase.Web.ui.Entrada" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContenedorPrincipal" runat="server">
+    <div>
+        Bienvenido al sistema de información farmaceutica DQBase
+    </div>
+</asp:Content>
